@@ -9,7 +9,7 @@
 @section('content')
     <div class="p-4" style="min-height: 800px;">
         @if (session('message'))
-            <div class="alert alert-primary" role='alert'>
+            <div id="alert-message" class="alert alert-primary" role="alert">
                 {{ session('message') }}
             </div>
         @endif
@@ -65,6 +65,13 @@
             let formDelete = document.getElementById('formDelete')
             formDelete.setAttribute('action', '{{ route('admin.products.deleteProduct') }}?idProduct=' + id)
         })
+
+        setTimeout(function() {
+        var alertElement = document.getElementById('alert-message');
+        if (alertElement) {
+            alertElement.style.display = 'none';
+        }
+    }, 3000);
     </script>
 @endpush
 

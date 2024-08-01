@@ -6,7 +6,15 @@
 @section('content')
     <div class="p-4" style="min-height: 800px;">
         <h4 class="text-primary mb-4">Thêm người dùng</h4>
-        
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form action="{{route('admin.users.addPostUsers')}}" method="POST">
             @csrf
             <div class="mb-3">

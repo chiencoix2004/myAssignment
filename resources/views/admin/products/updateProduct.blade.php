@@ -6,6 +6,15 @@
 @section('content')
     <div class="p-4" style="min-height: 800px;">
         <h4 class="text-primary mb-4">Sửa sản phẩm</h4>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form action="{{ route('admin.products.updatePostProduct', $products->id) }}" method="POST"
             enctype="multipart/form-data">
             @csrf
@@ -16,11 +25,11 @@
             </div>
             <div class="mb-3">
                 <label for="price">Giá Sản Phẩm</label>
-                <input type="number" class="form-control" value="{{ $products->price }}" id="price" name="price">
+                <input type="text" class="form-control" value="{{ $products->price }}" id="price" name="price">
             </div>
             <div class="mb-3">
-                <label for="mota">View Sản Phẩm</label>
-                <input type="number" class="form-control" name="mota" id="mota" value="{{ $products->view }}">
+                <label for="view">View Sản Phẩm</label>
+                <input type="number" class="form-control" name="view" id="view" value="{{ $products->view }}">
             </div>
             <div class="mb-3">
                 <label for="category">Category</label>

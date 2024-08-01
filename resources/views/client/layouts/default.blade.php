@@ -33,6 +33,46 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="" />
     <meta property="og:updated_time" content="2020-03-15T15:40:24+06:00" />
+    @stack('css')
+
+    <style>
+        .user-info {
+            text-align: center; /* Căn giữa nội dung trong khối */
+            display: flex;
+            flex-direction: column; /* Hiển thị các phần tử theo chiều dọc */
+            align-items: center; /* Căn giữa các phần tử theo chiều ngang */
+        }
+        .user-info i {
+            font-size: 24px; /* Kích thước biểu tượng */
+            color: black; /* Màu sắc của biểu tượng */
+        }
+        .user-info p {
+            margin-top: 5px; /* Khoảng cách giữa biểu tượng và chữ */
+            font-size: 14px; /* Kích thước chữ */
+        }
+        .search-bar {
+            flex-grow: 1; /* Cho phép thanh tìm kiếm mở rộng để lấp đầy không gian */
+            display: flex;
+            align-items: center; /* Căn giữa nội dung theo chiều dọc */
+        }
+        .search-bar input {
+            width: 100%; /* Chiều rộng của thanh tìm kiếm */
+            padding: 0.5rem; /* Padding để thêm không gian xung quanh */
+        }
+        .navbar-toggler {
+            border: 0; /* Loại bỏ đường viền */
+            background: transparent; /* Nền trong suốt */
+        }
+        .order-2 {
+            order: 2; /* Đặt thứ tự của phần tử */
+        }
+        .order-lg-3 {
+            order: 3; /* Đặt thứ tự của phần tử khi trên màn hình lớn */
+        }
+        .order-1 {
+            order: 1; /* Đặt thứ tự của phần tử */
+        }
+    </style>
 </head>
 
 <body>
@@ -49,17 +89,17 @@
     {{-- /footer  --}}
 
     <!-- JS Plugins -->
-    <script src="{{asset('plugins/jQuery/jquery.min.js')}}"></script>
+    <script src="{{ asset('plugins/jQuery/jquery.min.js') }}"></script>
 
-    <script src="{{asset('plugins/bootstrap/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('plugins/bootstrap/bootstrap.min.js') }}"></script>
 
-    <script src="{{asset('plugins/slick/slick.min.js')}}"></script>
+    <script src="{{ asset('plugins/slick/slick.min.js') }}"></script>
 
-    <script src="{{asset('plugins/instafeed/instafeed.min.js')}}"></script>
+    <script src="{{ asset('plugins/instafeed/instafeed.min.js') }}"></script>
 
 
     <!-- Main Script -->
-    <script src="{{asset('js/script.js')}}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
 </body>
 
 </html>
